@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CategoryController;
 use  App\Http\Controllers\BlogController;
+use App\Http\Controllers\VisitorAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,9 @@ route::get('/category',[HomeController::class,'category'])->name('category');
 route::get('/contact',[HomeController::class,'contact'])->name('contact');
 route::get('/single-post',[HomeController::class,'singlePost'])->name('single-post');
 route::get('/blog/details/{slug}',[HomeController::class,'blogDetails'])->name('blog.details');
+
+Route::get('/visitor/signup',[VisitorAuthController::class,'signupView'])->name('signupView');
+Route::post('/visitor/signup',[VisitorAuthController::class,'signup'])->name('signup');
 
 
 
